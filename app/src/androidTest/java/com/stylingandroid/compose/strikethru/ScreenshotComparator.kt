@@ -97,6 +97,5 @@ private fun Bitmap.getRow(pixels: IntArray, column: Int) {
 
 internal fun clearExistingImages(folderName: String) {
     val path = File(InstrumentationRegistry.getInstrumentation().targetContext.filesDir, folderName)
-    path.walk().forEach { file -> file.delete() }
-    path.delete()
+    path.deleteRecursively()
 }

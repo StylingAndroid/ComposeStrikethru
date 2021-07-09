@@ -1,6 +1,6 @@
 [versions]
 kotlin = "1.5.10"
-androidBuildTools = "7.1.0-alpha02"
+androidBuildTools = "7.1.0-alpha03"
 versions = "0.38.0"
 detekt = "1.17.0"
 ktlint = "10.0.0"
