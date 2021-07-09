@@ -43,12 +43,25 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.compose.get()
     }
+    packagingOptions {
+        resources.excludes += "META-INF/AL2.0"
+        resources.excludes += "META-INF/LGPL2.1"
+    }
 }
 
 dependencies {
+    implementation(libs.kotlin.sdk)
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
     implementation(libs.bundles.androidx.compose)
+
+    debugImplementation(libs.testing.compose.manifest)
+
+    testImplementation(libs.testing.junit)
+    androidTestImplementation(libs.testing.androidx.test)
+    androidTestImplementation(libs.testing.androidx.rules)
+    androidTestImplementation(libs.testing.espresso.core)
+    androidTestImplementation(libs.testing.compose.ui)
 }
 
 detekt {
